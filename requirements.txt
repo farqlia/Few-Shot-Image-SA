@@ -1,0 +1,5 @@
+torch==2.8.0  # install as pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126 if using cuda; other cuda versions -> https://pytorch.org/
+torchvision==0.23.0
+pytorch-lightning==2.5.5
+seaborn==0.13.2
+tensorboard==2.20.0

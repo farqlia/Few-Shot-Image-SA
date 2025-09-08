@@ -1,0 +1,14 @@
+defaults:
+  - base_config
+  - _self_
+
+train:
+  batch_size: 32
+  epochs: 20
+  shuffle: True
+  num_workers: 4
+
+transform:
+  fer2013:
+    img_size: 48
+    output_channels: 3
