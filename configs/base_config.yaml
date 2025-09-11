@@ -3,7 +3,7 @@ device: "cuda"
 
 dataset:
   name: fer2013
-  data_path: data/fer2013
+  data_path: datasets/fer2013
   val_split: 0.2
 
 model:
