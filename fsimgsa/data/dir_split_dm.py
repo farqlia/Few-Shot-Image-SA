@@ -1,9 +1,7 @@
 from torch.utils.data import DataLoader, random_split
 import pytorch_lightning as pl
-from fsimgsa.data.fer2013 import get_fer2013_transform, FER2013Dataset
 
-
-class FER2013DataModule(pl.LightningDataModule):
+class Dir_Split_DataModule(pl.LightningDataModule):
     def __init__(
         self,
         transform_cfg: dict,
@@ -12,14 +10,16 @@ class FER2013DataModule(pl.LightningDataModule):
         val_split: float,
         shuffle: bool,
         num_workers: int,
+        transform,
+        data_set_cls
     ):
         super().__init__()
         self.save_hyperparameters()
         self.train_ds, self.val_ds = None, None
         self.num_classes = None 
         self.classes = None
-        self.hparams.dataset_cls = FER2013Dataset
-        self.hparams.transform = get_fer2013_transform(transform_cfg.fer2013)
+        self.hparams.dataset_cls = data_set_cls
+        self.hparams.transform = transform
 
     def setup(self, stage: None | str = None):
         self.test_ds = self.hparams.dataset_cls(

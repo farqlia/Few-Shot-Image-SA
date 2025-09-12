@@ -1,5 +1,6 @@
 from fsimgsa.model.base_model import BaseModel, ModelLightning
-from fsimgsa.data.dataset import FER2013DataModule
+from fsimgsa.data.fer2013_dm import FER2013DataModule
+from fsimgsa.data.jaffe_dm import JaffeDataModule
 import hydra
 from omegaconf import DictConfig, OmegaConf
 import pytorch_lightning as pl
@@ -12,7 +13,7 @@ def train_base_model(cfg: DictConfig):
     print(OmegaConf.to_yaml(cfg))
     pl.seed_everything(cfg.seed)
 
-    dm = FER2013DataModule(
+    dm = JaffeDataModule(
         transform_cfg=cfg.transform,
         data_path=cfg.dataset.data_path,
         batch_size=cfg.train.batch_size,
