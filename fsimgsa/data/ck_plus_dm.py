@@ -18,6 +18,6 @@ class CKPlusDataModule(Dir_Split_DataModule):
             val_split,
             shuffle,
             num_workers,
-            transform = get_ck_plus_transform(transform_cfg.ck_plus),
+            transform = get_ck_plus_transform(transform_cfg.ckplus),
             data_set_cls = CKPlusDataset
         )
