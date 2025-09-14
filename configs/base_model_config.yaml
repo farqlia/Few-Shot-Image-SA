@@ -17,3 +17,7 @@ transform:
   jaffe:
     img_size: 256
     output_channels: 3
+
+  ckplus:
+    img_size: 128
+    output_channels: 3
