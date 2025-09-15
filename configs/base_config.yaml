@@ -2,9 +2,9 @@ seed: 124
 device: "cuda"
 
 dataset:
-  name: fer2013
-  data_path: data/fer2013
+  name: jaffe
+  data_path: datasets/jaffe
   val_split: 0.2
 
 model:
-  save_dir: models/fer2013
+  save_dir: models/jaffe

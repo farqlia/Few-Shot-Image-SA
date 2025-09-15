@@ -24,7 +24,7 @@ class FER2013Dataset(Dataset):
         self.classes: list[str] = []
         class_to_idx = {}
         self.transform = transform
-
+    
         for i, class_dir in enumerate(sorted(self.rootdir.iterdir())):
             if not class_dir.is_dir():
                 continue
@@ -45,4 +45,5 @@ class FER2013Dataset(Dataset):
         img = img.float() / 255.0
         if self.transform is not None:
             img = self.transform(img)
+
         return img, class_
