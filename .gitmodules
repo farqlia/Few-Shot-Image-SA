@@ -1,0 +1,3 @@
+[submodule "repo2"]
+	path = repo2
+	url = https://github.com/dubajstan/Prototypical-Networks.git
